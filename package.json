@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "name": "react-native-led-number",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/React-Sextant/react-native-led-number.git"
+  },
+  "license": "MIT",
+  "description": "纯CSS模拟LED夜晶数字字体-Digital 7 Font",
+  "scripts": {
+
+  },
+  "dependencies": {
+
+  },
+  "keywords": [
+    "react",
+    "native",
+    "led",
+    "number",
+    "Digital"
+  ],
+  "files": [
+    "src"
+  ],
+  "main": "src/index.tsx",
+  "author": "https://github.com/1uokun",
+  "email": "1498710037@qq.com"
+}
