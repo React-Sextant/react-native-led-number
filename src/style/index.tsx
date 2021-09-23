@@ -1,122 +1,139 @@
-import React from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, ViewStyle } from "react-native";
 
-const color = 'rgba(121, 121, 121, 1)'
-const width = 1.3;
-export const styles = StyleSheet.create({
-    bg:{
-        backgroundColor:color,
+interface LEDStyle {
+  column: ViewStyle;
+  row: ViewStyle;
+  horizontal: ViewStyle;
+  center: ViewStyle;
+  margin: ViewStyle;
+  hide: ViewStyle;
+  triangleUp: ViewStyle;
+  triangleRight: ViewStyle;
+  right: ViewStyle;
+  triangleDown: ViewStyle;
+  triangleLeft: ViewStyle;
+  left: ViewStyle;
+  topLeft: ViewStyle;
+  topRight: ViewStyle;
+  bottomLeft: ViewStyle;
+  bottomRight: ViewStyle;
+}
+
+export default ({ size = 1.3, color = "rgba(121, 121, 121, 1)" }) =>
+  StyleSheet.create<LEDStyle>({
+    column: {
+      width: size * 2,
+      height: size * 6,
+      backgroundColor: color,
     },
-    center:{
-        justifyContent:'center',
-        alignItems:'center'
+    row: {
+      height: size * 2,
+      width: size * 6,
+      backgroundColor: color,
     },
-    triangleUp: {
-        width: 0,
-        height: 0,
-        borderLeftWidth: width,
-        borderLeftColor:'transparent',
-        borderRightWidth: width,
-        borderRightColor: 'transparent',
-        borderBottomWidth: width,
-        borderBottomColor:color,
+    horizontal: {
+      flexDirection: "row",
     },
-    triangleRight: {
-        width: 0,
-        height: 0,
-        borderTopWidth: width,
-        borderTopColor:'transparent',
-        borderLeftWidth: width,
-        borderLeftColor: color,
-        borderBottomWidth: width,
-        borderBottomColor:'transparent',
-    },
-    right: {
-        width: 0,
-        height: 0,
-        borderTopWidth: width,
-        borderTopColor:'transparent',
-        borderLeftWidth: width*2,
-        borderLeftColor: color,
-        borderBottomWidth: width,
-        borderBottomColor:'transparent',
-    },
-    triangleDown: {
-        width: 0,
-        height: 0,
-        borderLeftWidth: width,
-        borderLeftColor:'transparent',
-        borderRightWidth: width,
-        borderRightColor: 'transparent',
-        borderTopWidth: width,
-        borderTopColor:color,
-    },
-    triangleLeft: {
-        width: 0,
-        height: 0,
-        borderTopWidth: width,
-        borderTopColor:'transparent',
-        borderRightWidth: width,
-        borderRightColor: color,
-        borderBottomWidth: width,
-        borderBottomColor:'transparent',
-    },
-    left: {
-        width: 0,
-        height: 0,
-        borderTopWidth: width,
-        borderTopColor:'transparent',
-        borderRightWidth: width*2,
-        borderRightColor: color,
-        borderBottomWidth: width,
-        borderBottomColor:'transparent',
-    },
-    topLeft: {
-        width: 0,
-        height: 0,
-        borderTopWidth: width,
-        borderTopColor: color,
-        borderRightWidth: width*2,
-        borderRightColor: 'transparent',
-    },
-    topRight: {
-        width: 0,
-        height: 0,
-        borderTopWidth: width,
-        borderTopColor: color,
-        borderLeftWidth: width*2,
-        borderLeftColor: 'transparent',
-    },
-    bottomLeft: {
-        width: 0,
-        height: 0,
-        borderBottomWidth: width,
-        borderBottomColor: color,
-        borderRightWidth: width*2,
-        borderRightColor: 'transparent',
-    },
-    bottomRight: {
-        width: 0,
-        height: 0,
-        borderBottomWidth: width,
-        borderBottomColor: color,
-        borderLeftWidth: width*2,
-        borderLeftColor: 'transparent',
-    },
-    column:{
-        width:width*2,
-        height:width*6,
-        backgroundColor:color,
-    },
-    row:{
-        height:width*2,
-        width:width*6,
-        backgroundColor:color,
-    },
-    horizontal:{
-        flexDirection:'row'
+    center: {
+      justifyContent: "center",
+      alignItems: "center",
     },
     margin: {
-        marginBottom:- (width/1.4)
-    }
-})
+      marginBottom: -(size / 1.1),
+    },
+    hide: {
+      opacity: 0,
+    },
+    triangleUp: {
+      width: 0,
+      height: 0,
+      borderLeftWidth: size,
+      borderLeftColor: "transparent",
+      borderRightWidth: size,
+      borderRightColor: "transparent",
+      borderBottomWidth: size,
+      borderBottomColor: color,
+    },
+    triangleRight: {
+      width: 0,
+      height: 0,
+      borderTopWidth: size,
+      borderTopColor: "transparent",
+      borderLeftWidth: size,
+      borderLeftColor: color,
+      borderBottomWidth: size,
+      borderBottomColor: "transparent",
+    },
+    right: {
+      width: 0,
+      height: 0,
+      borderTopWidth: size,
+      borderTopColor: "transparent",
+      borderLeftWidth: size * 2,
+      borderLeftColor: color,
+      borderBottomWidth: size,
+      borderBottomColor: "transparent",
+    },
+    triangleDown: {
+      width: 0,
+      height: 0,
+      borderLeftWidth: size,
+      borderLeftColor: "transparent",
+      borderRightWidth: size,
+      borderRightColor: "transparent",
+      borderTopWidth: size,
+      borderTopColor: color,
+    },
+    triangleLeft: {
+      width: 0,
+      height: 0,
+      borderTopWidth: size,
+      borderTopColor: "transparent",
+      borderRightWidth: size,
+      borderRightColor: color,
+      borderBottomWidth: size,
+      borderBottomColor: "transparent",
+    },
+    left: {
+      width: 0,
+      height: 0,
+      borderTopWidth: size,
+      borderTopColor: "transparent",
+      borderRightWidth: size * 2,
+      borderRightColor: color,
+      borderBottomWidth: size,
+      borderBottomColor: "transparent",
+    },
+    topLeft: {
+      width: 0,
+      height: 0,
+      borderTopWidth: size,
+      borderTopColor: color,
+      borderRightWidth: size * 2,
+      borderRightColor: "transparent",
+    },
+    topRight: {
+      width: 0,
+      height: 0,
+      borderTopWidth: size,
+      borderTopColor: color,
+      borderLeftWidth: size * 2,
+      borderLeftColor: "transparent",
+    },
+    bottomLeft: {
+      width: 0,
+      height: 0,
+      borderBottomWidth: size,
+      borderBottomColor: color,
+      borderRightWidth: size * 2,
+      borderRightColor: "transparent",
+    },
+    bottomRight: {
+      width: 0,
+      height: 0,
+      borderBottomWidth: size,
+      borderBottomColor: color,
+      borderLeftWidth: size * 2,
+      borderLeftColor: "transparent",
+    },
+  });
